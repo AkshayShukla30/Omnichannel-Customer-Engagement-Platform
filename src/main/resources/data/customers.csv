@@ -1,0 +1,11 @@
+customerId,fullName,email,phone,segment,accountNumber,accountBalance,activeLoans,cardType
+CUST-1001,Aarav Sharma,aarav.sharma@example.com,+919800010001,PREMIER,50100000011,125430.5,1,PLATINUM
+CUST-1002,Diya Verma,diya.verma@example.com,+919800010002,STANDARD,50100000021,18250.0,0,CLASSIC
+CUST-1003,Rohan Mehta,rohan.mehta@example.com,+919800010003,PREMIER,50100000031,342900.75,2,SIGNATURE
+CUST-1004,Ishita Nair,ishita.nair@example.com,+919800010004,STANDARD,50100000041,9420.1,1,CLASSIC
+CUST-1005,Kabir Singh,kabir.singh@example.com,+919800010005,BASIC,50100000051,2150.0,0,NONE
+CUST-1006,Ananya Iyer,ananya.iyer@example.com,+919800010006,PREMIER,50100000061,88760.25,0,PLATINUM
+CUST-1007,Vivaan Gupta,vivaan.gupta@example.com,+919800010007,STANDARD,50100000071,41300.0,3,CLASSIC
+CUST-1008,Saanvi Reddy,saanvi.reddy@example.com,+919800010008,BASIC,50100000081,760.4,0,NONE
+CUST-1009,Arjun Kapoor,arjun.kapoor@example.com,+919800010009,PREMIER,50100000091,215000.0,1,SIGNATURE
+CUST-1010,Meera Joshi,meera.joshi@example.com,+919800010010,STANDARD,50100000101,30210.9,2,CLASSIC

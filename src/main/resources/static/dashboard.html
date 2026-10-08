@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Omnichannel Engagement</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Omnichannel Engagement</span>
+    <nav>
+      <a href="/">Agent desktop</a>
+      <a href="/dashboard.html" class="active">Dashboard</a>
+      <a href="/swagger-ui.html" target="_blank" rel="noopener">API docs</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="message" class="banner error" role="alert" hidden></div>
+
+    <h1>Contact center dashboard</h1>
+    <p class="sub">Every number comes from a MySQL stored procedure. The queue refreshes every 5 seconds.</p>
+
+    <div class="toolbar">
+      <label for="days">Period</label>
+      <select id="days">
+        <option value="1">Last 24 hours</option>
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+      </select>
+      <span class="stamp" id="stamp"></span>
+    </div>
+
+    <div class="kpis">
+      <div class="panel kpi"><div class="value" id="kpi-closed">-</div><div class="label">Interactions closed</div></div>
+      <div class="panel kpi"><div class="value" id="kpi-aht">-</div><div class="label">Average handle time</div></div>
+      <div class="panel kpi"><div class="value" id="kpi-queue">-</div><div class="label">Waiting in queue now</div></div>
+      <div class="panel kpi"><div class="value" id="kpi-top">-</div><div class="label">Busiest agent</div></div>
+    </div>
+
+    <div class="charts">
+      <div class="panel"><h2>Average handle time by skill (seconds)</h2><div class="chart-box"><canvas id="chart-aht"></canvas></div></div>
+      <div class="panel"><h2>Interactions per agent</h2><div class="chart-box"><canvas id="chart-agents"></canvas></div></div>
+      <div class="panel"><h2>Queue length by skill</h2><div class="chart-box"><canvas id="chart-queue"></canvas></div></div>
+      <div class="panel"><h2>Disposition breakdown</h2><div class="chart-box"><canvas id="chart-dispositions"></canvas></div></div>
+    </div>
+  </main>
+
+  <script src="/js/vendor/chart.umd.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

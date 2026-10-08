@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Desktop - Omnichannel Engagement</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Omnichannel Engagement</span>
+    <nav>
+      <a href="/" class="active">Agent desktop</a>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/swagger-ui.html" target="_blank" rel="noopener">API docs</a>
+    </nav>
+    <div class="who" id="who" hidden>
+      <span id="agent-name"></span>
+      <select id="status" aria-label="Agent status">
+        <option value="AVAILABLE">Available</option>
+        <option value="OFFLINE">Offline</option>
+        <option value="BUSY" disabled>On an interaction</option>
+      </select>
+      <button class="link" id="logout" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="message" class="banner" role="status" hidden></div>
+
+    <section id="login-view" class="panel login" hidden>
+      <h1>Agent login</h1>
+      <p class="sub">Sign in to start receiving calls and chats.</p>
+      <form id="login-form">
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" autocomplete="username" required maxlength="50">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" required maxlength="100">
+        </div>
+        <button type="submit">Log in</button>
+      </form>
+      <p class="hint">Demo agents: priya, rahul, ananya, vikram, meera. Password: agent123</p>
+    </section>
+
+    <section id="desk-view" hidden>
+      <div id="idle" class="panel idle">
+        <h2>Waiting for the next interaction</h2>
+        <p id="idle-text">You are available. New calls and chats show up here automatically.</p>
+      </div>
+
+      <div id="active" class="grid" hidden>
+        <div class="panel">
+          <div class="interaction-head">
+            <strong id="interaction-title"></strong>
+            <span class="chip" id="skill-chip"></span>
+            <span class="chip high" id="priority-chip" hidden>High priority</span>
+            <span class="timer" id="timer" aria-label="Time on interaction">00:00</span>
+          </div>
+          <div id="customer-error" class="banner error" hidden></div>
+          <div id="customer-panel">
+            <div class="customer-name" id="c-name"></div>
+            <dl class="facts">
+              <dt>Customer ID</dt><dd id="c-id"></dd>
+              <dt>Segment</dt><dd id="c-segment"></dd>
+              <dt>Phone</dt><dd id="c-phone"></dd>
+              <dt>Email</dt><dd id="c-email"></dd>
+              <dt>Account</dt><dd id="c-account"></dd>
+              <dt>Balance</dt><dd id="c-balance"></dd>
+              <dt>Active loans</dt><dd id="c-loans"></dd>
+              <dt>Card</dt><dd id="c-card"></dd>
+            </dl>
+            <div class="source" id="c-source"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Notes</h2>
+          <ul class="notes" id="notes"></ul>
+          <div class="field">
+            <label for="note-text">Add a note</label>
+            <textarea id="note-text" maxlength="2000"></textarea>
+          </div>
+          <button class="secondary" id="add-note" type="button">Save note</button>
+
+          <hr style="border:none;border-top:1px solid var(--line);margin:20px 0">
+
+          <div class="field">
+            <label for="disposition">Disposition</label>
+            <select id="disposition">
+              <option value="">Select an outcome</option>
+              <option value="RESOLVED">Resolved</option>
+              <option value="FOLLOW_UP_REQUIRED">Follow-up required</option>
+              <option value="ESCALATED">Escalated</option>
+              <option value="CALLBACK_REQUESTED">Callback requested</option>
+              <option value="CUSTOMER_DISCONNECTED">Customer disconnected</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button id="close-interaction" type="button">Close interaction</button>
+          </div>
+        </div>
+      </div>
+
+      <details class="demo">
+        <summary>Demo tools</summary>
+        <div class="panel">
+          <span>Simulate incoming interactions</span>
+          <select id="sim-count" aria-label="How many">
+            <option value="1">1</option>
+            <option value="3" selected>3</option>
+            <option value="10">10</option>
+          </select>
+          <button class="secondary" id="simulate" type="button">Generate</button>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/desk.js"></script>
+</body>
+</html>

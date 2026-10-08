@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: omnichannel-platform
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/omnichannel?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USER:omni}
+    password: ${DB_PASSWORD:omni_dev_pw}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        http-only: true
+        same-site: lax
+
+# pick one: core-banking | rest-crm | file
+crm:
+  adapter: ${CRM_ADAPTER:core-banking}
+  rest:
+    base-url: ${CRM_REST_BASE_URL:http://localhost:8080/mock-crm}
+    format: ${CRM_REST_FORMAT:json}
+  file:
+    path: ${CRM_FILE_PATH:classpath:data/customers.csv}
+
+# pick one: longest-idle | least-busy
+routing:
+  strategy: ${ROUTING_STRATEGY:longest-idle}
+  heartbeat-timeout: 20s
+
+# simulator is the default, twilio needs the three values below
+telephony:
+  provider: ${TELEPHONY_PROVIDER:simulator}
+  twilio:
+    account-sid: ${TWILIO_ACCOUNT_SID:}
+    auth-token: ${TWILIO_AUTH_TOKEN:}
+    public-base-url: ${TWILIO_PUBLIC_BASE_URL:}
+
+simulator:
+  customer-refs: CUST-1001,CUST-1002,CUST-1003,CUST-1004,CUST-1005,CUST-1006,CUST-1007,CUST-1008,CUST-1009,CUST-1010
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.omnichannel: INFO

@@ -1,0 +1,112 @@
+[
+  {
+    "customerId": "CUST-1001",
+    "fullName": "Aarav Sharma",
+    "email": "aarav.sharma@example.com",
+    "phone": "+919800010001",
+    "segment": "PREMIER",
+    "accountNumber": "50100000011",
+    "accountBalance": 125430.5,
+    "activeLoans": 1,
+    "cardType": "PLATINUM"
+  },
+  {
+    "customerId": "CUST-1002",
+    "fullName": "Diya Verma",
+    "email": "diya.verma@example.com",
+    "phone": "+919800010002",
+    "segment": "STANDARD",
+    "accountNumber": "50100000021",
+    "accountBalance": 18250.0,
+    "activeLoans": 0,
+    "cardType": "CLASSIC"
+  },
+  {
+    "customerId": "CUST-1003",
+    "fullName": "Rohan Mehta",
+    "email": "rohan.mehta@example.com",
+    "phone": "+919800010003",
+    "segment": "PREMIER",
+    "accountNumber": "50100000031",
+    "accountBalance": 342900.75,
+    "activeLoans": 2,
+    "cardType": "SIGNATURE"
+  },
+  {
+    "customerId": "CUST-1004",
+    "fullName": "Ishita Nair",
+    "email": "ishita.nair@example.com",
+    "phone": "+919800010004",
+    "segment": "STANDARD",
+    "accountNumber": "50100000041",
+    "accountBalance": 9420.1,
+    "activeLoans": 1,
+    "cardType": "CLASSIC"
+  },
+  {
+    "customerId": "CUST-1005",
+    "fullName": "Kabir Singh",
+    "email": "kabir.singh@example.com",
+    "phone": "+919800010005",
+    "segment": "BASIC",
+    "accountNumber": "50100000051",
+    "accountBalance": 2150.0,
+    "activeLoans": 0,
+    "cardType": "NONE"
+  },
+  {
+    "customerId": "CUST-1006",
+    "fullName": "Ananya Iyer",
+    "email": "ananya.iyer@example.com",
+    "phone": "+919800010006",
+    "segment": "PREMIER",
+    "accountNumber": "50100000061",
+    "accountBalance": 88760.25,
+    "activeLoans": 0,
+    "cardType": "PLATINUM"
+  },
+  {
+    "customerId": "CUST-1007",
+    "fullName": "Vivaan Gupta",
+    "email": "vivaan.gupta@example.com",
+    "phone": "+919800010007",
+    "segment": "STANDARD",
+    "accountNumber": "50100000071",
+    "accountBalance": 41300.0,
+    "activeLoans": 3,
+    "cardType": "CLASSIC"
+  },
+  {
+    "customerId": "CUST-1008",
+    "fullName": "Saanvi Reddy",
+    "email": "saanvi.reddy@example.com",
+    "phone": "+919800010008",
+    "segment": "BASIC",
+    "accountNumber": "50100000081",
+    "accountBalance": 760.4,
+    "activeLoans": 0,
+    "cardType": "NONE"
+  },
+  {
+    "customerId": "CUST-1009",
+    "fullName": "Arjun Kapoor",
+    "email": "arjun.kapoor@example.com",
+    "phone": "+919800010009",
+    "segment": "PREMIER",
+    "accountNumber": "50100000091",
+    "accountBalance": 215000.0,
+    "activeLoans": 1,
+    "cardType": "SIGNATURE"
+  },
+  {
+    "customerId": "CUST-1010",
+    "fullName": "Meera Joshi",
+    "email": "meera.joshi@example.com",
+    "phone": "+919800010010",
+    "segment": "STANDARD",
+    "accountNumber": "50100000101",
+    "accountBalance": 30210.9,
+    "activeLoans": 2,
+    "cardType": "CLASSIC"
+  }
+]

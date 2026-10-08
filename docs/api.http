@@ -1,0 +1,75 @@
+### Works with the VS Code "REST Client" extension and IntelliJ HTTP client.
+### Run the login request first, the session cookie is reused automatically.
+
+@host = http://localhost:8080
+
+### Login (marks the agent available)
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{ "username": "priya", "password": "agent123" }
+
+### Who am I
+GET {{host}}/api/auth/me
+
+### Simulate 3 random interactions
+POST {{host}}/api/simulator/interactions
+Content-Type: application/json
+
+{ "count": 3 }
+
+### Simulate one specific high priority loan call
+POST {{host}}/api/simulator/interactions
+Content-Type: application/json
+
+{ "count": 1, "skill": "LOAN", "channel": "CALL", "priority": 1, "customerRef": "CUST-1001" }
+
+### Poll the desk: assigned interaction + customer screen pop
+GET {{host}}/api/desk/state
+
+### Add a note (replace 1 with the interaction id from the state call)
+POST {{host}}/api/desk/interactions/1/notes
+Content-Type: application/json
+
+{ "text": "Customer asked about EMI holiday" }
+
+### Close with a disposition
+POST {{host}}/api/desk/interactions/1/close
+Content-Type: application/json
+
+{ "disposition": "RESOLVED", "note": "Explained the process, sent the form" }
+
+### Go offline / available (not allowed while on an interaction)
+POST {{host}}/api/desk/status
+Content-Type: application/json
+
+{ "status": "OFFLINE" }
+
+### Which CRM adapter is active
+GET {{host}}/api/integration/adapter
+
+### Look up a customer through the active adapter
+GET {{host}}/api/integration/customers/CUST-1003
+
+### Mock CRM, JSON api
+GET {{host}}/mock-crm/customers/CUST-1001
+Accept: application/json
+
+### Mock CRM, legacy XML api
+GET {{host}}/mock-crm/legacy/customers/CUST-1001
+Accept: application/xml
+
+### Reports
+GET {{host}}/api/reports/handle-time?days=30
+
+###
+GET {{host}}/api/reports/interactions-per-agent?days=30
+
+###
+GET {{host}}/api/reports/queue-length
+
+###
+GET {{host}}/api/reports/dispositions?days=30
+
+### Logout
+POST {{host}}/api/auth/logout

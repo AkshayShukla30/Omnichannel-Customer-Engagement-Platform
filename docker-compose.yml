@@ -1,0 +1,40 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: omnichannel
+      MYSQL_USER: omni
+      MYSQL_PASSWORD: ${DB_PASSWORD:-omni_dev_pw}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_dev_pw}
+      TZ: UTC
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  app:
+    build: .
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/omnichannel?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USER: omni
+      DB_PASSWORD: ${DB_PASSWORD:-omni_dev_pw}
+      CRM_ADAPTER: ${CRM_ADAPTER:-core-banking}
+      CRM_REST_FORMAT: ${CRM_REST_FORMAT:-json}
+      ROUTING_STRATEGY: ${ROUTING_STRATEGY:-longest-idle}
+      TELEPHONY_PROVIDER: ${TELEPHONY_PROVIDER:-simulator}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID:-}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN:-}
+      TWILIO_PUBLIC_BASE_URL: ${TWILIO_PUBLIC_BASE_URL:-}
+
+volumes:
+  mysql-data:

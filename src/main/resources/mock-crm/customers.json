@@ -1,0 +1,182 @@
+[
+  {
+    "id": "CUST-1001",
+    "name": {
+      "first": "Aarav",
+      "last": "Sharma"
+    },
+    "contact": {
+      "email": "aarav.sharma@example.com",
+      "mobile": "+919800010001"
+    },
+    "segment": "PREMIER",
+    "account": {
+      "number": "50100000011",
+      "balance": 125430.5
+    },
+    "loans": 1,
+    "card": "PLATINUM"
+  },
+  {
+    "id": "CUST-1002",
+    "name": {
+      "first": "Diya",
+      "last": "Verma"
+    },
+    "contact": {
+      "email": "diya.verma@example.com",
+      "mobile": "+919800010002"
+    },
+    "segment": "STANDARD",
+    "account": {
+      "number": "50100000021",
+      "balance": 18250.0
+    },
+    "loans": 0,
+    "card": "CLASSIC"
+  },
+  {
+    "id": "CUST-1003",
+    "name": {
+      "first": "Rohan",
+      "last": "Mehta"
+    },
+    "contact": {
+      "email": "rohan.mehta@example.com",
+      "mobile": "+919800010003"
+    },
+    "segment": "PREMIER",
+    "account": {
+      "number": "50100000031",
+      "balance": 342900.75
+    },
+    "loans": 2,
+    "card": "SIGNATURE"
+  },
+  {
+    "id": "CUST-1004",
+    "name": {
+      "first": "Ishita",
+      "last": "Nair"
+    },
+    "contact": {
+      "email": "ishita.nair@example.com",
+      "mobile": "+919800010004"
+    },
+    "segment": "STANDARD",
+    "account": {
+      "number": "50100000041",
+      "balance": 9420.1
+    },
+    "loans": 1,
+    "card": "CLASSIC"
+  },
+  {
+    "id": "CUST-1005",
+    "name": {
+      "first": "Kabir",
+      "last": "Singh"
+    },
+    "contact": {
+      "email": "kabir.singh@example.com",
+      "mobile": "+919800010005"
+    },
+    "segment": "BASIC",
+    "account": {
+      "number": "50100000051",
+      "balance": 2150.0
+    },
+    "loans": 0,
+    "card": "NONE"
+  },
+  {
+    "id": "CUST-1006",
+    "name": {
+      "first": "Ananya",
+      "last": "Iyer"
+    },
+    "contact": {
+      "email": "ananya.iyer@example.com",
+      "mobile": "+919800010006"
+    },
+    "segment": "PREMIER",
+    "account": {
+      "number": "50100000061",
+      "balance": 88760.25
+    },
+    "loans": 0,
+    "card": "PLATINUM"
+  },
+  {
+    "id": "CUST-1007",
+    "name": {
+      "first": "Vivaan",
+      "last": "Gupta"
+    },
+    "contact": {
+      "email": "vivaan.gupta@example.com",
+      "mobile": "+919800010007"
+    },
+    "segment": "STANDARD",
+    "account": {
+      "number": "50100000071",
+      "balance": 41300.0
+    },
+    "loans": 3,
+    "card": "CLASSIC"
+  },
+  {
+    "id": "CUST-1008",
+    "name": {
+      "first": "Saanvi",
+      "last": "Reddy"
+    },
+    "contact": {
+      "email": "saanvi.reddy@example.com",
+      "mobile": "+919800010008"
+    },
+    "segment": "BASIC",
+    "account": {
+      "number": "50100000081",
+      "balance": 760.4
+    },
+    "loans": 0,
+    "card": "NONE"
+  },
+  {
+    "id": "CUST-1009",
+    "name": {
+      "first": "Arjun",
+      "last": "Kapoor"
+    },
+    "contact": {
+      "email": "arjun.kapoor@example.com",
+      "mobile": "+919800010009"
+    },
+    "segment": "PREMIER",
+    "account": {
+      "number": "50100000091",
+      "balance": 215000.0
+    },
+    "loans": 1,
+    "card": "SIGNATURE"
+  },
+  {
+    "id": "CUST-1010",
+    "name": {
+      "first": "Meera",
+      "last": "Joshi"
+    },
+    "contact": {
+      "email": "meera.joshi@example.com",
+      "mobile": "+919800010010"
+    },
+    "segment": "STANDARD",
+    "account": {
+      "number": "50100000101",
+      "balance": 30210.9
+    },
+    "loans": 2,
+    "card": "CLASSIC"
+  }
+]
